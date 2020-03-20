@@ -6,6 +6,19 @@ public class PizzaStore implements Serializable {
 
     private String storeName;
     private String logoUrl;
+    private String phoneNum;
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public PizzaStore(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
 
     public String getStoreName() {
         return storeName;
