@@ -35,6 +35,19 @@ public class PizzaStoreDetailActivity extends BaseActivity {
     @Override
     public void setupEvents() {
 
+        binding.storeLogoImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                크게보는 액티비티 이동 => 봐야할 이미지의 URL만 전달.
+                Intent intent = new Intent(mContext, LogoViewActivity.class);
+                intent.putExtra("logoUrl",store.getLogoUrl());
+                startActivity(intent);
+
+
+            }
+        });
+
         binding.callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
