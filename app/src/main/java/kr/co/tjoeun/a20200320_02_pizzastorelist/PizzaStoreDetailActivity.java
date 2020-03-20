@@ -5,8 +5,11 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
+
 import kr.co.tjoeun.a20200320_02_pizzastorelist.databinding.ActivityMainBinding;
 import kr.co.tjoeun.a20200320_02_pizzastorelist.databinding.ActivityPizzaStoreDetailBinding;
+import kr.co.tjoeun.a20200320_02_pizzastorelist.datas.PizzaStore;
 
 public class PizzaStoreDetailActivity extends BaseActivity {
     ActivityPizzaStoreDetailBinding binding = null;
@@ -26,6 +29,12 @@ public class PizzaStoreDetailActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+        PizzaStore store =(PizzaStore) getIntent().getSerializableExtra("store");
+
+        binding.storeNameTxt.setText(store.getStoreName());
+        binding.storePhoneTxt.setText(store.getPhoneNum());
+        Glide.with(mContext).load(store.getLogoUrl()).into(binding.storeLogoImg);
 
     }
 }
